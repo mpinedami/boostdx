@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "boostdx"
+version = "0.1.0"
+description = "Poniendo en practica los conocimientos del libro Boost your Django DX"
+authors = ["Maynor Pineda"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.0.4"
+ipython = "^8.3.0"
+django-debug-toolbar = "^3.4.0"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^22.3.0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
