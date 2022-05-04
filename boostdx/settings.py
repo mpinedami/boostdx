@@ -1,3 +1,4 @@
+from distutils.debug import DEBUG
 import os
 from pathlib import Path
 
@@ -16,13 +17,25 @@ DATABASES = {
 }
 
 DEBUG = os.environ.get("DEBUG", "") == "1"
+# DEBUG=1
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 INSTALLED_APPS = [
+    "debug_toolbar",
     "boostdx.core",
     "django.contrib.staticfiles",
-    "debug_toolbar",
+    "polls.apps.PollsConfig",
+    "django_browser_reload",
+]
+
+MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
+]
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 ROOT_URLCONF = "boostdx.urls"
@@ -36,5 +49,5 @@ TEMPLATES = [
         "APP_DIRS": True,
     },
 ]
-
+STATIC_URL = "static/"
 USE_TZ = True
