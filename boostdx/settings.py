@@ -1,4 +1,3 @@
-from distutils.debug import DEBUG
 import os
 from pathlib import Path
 
@@ -40,7 +39,7 @@ INTERNAL_IPS = [
 
 ROOT_URLCONF = "boostdx.urls"
 
-SECRET_KEY = "django-insecure-k-q^n$x68&!ni0zhqjjg5x@3@j&gcg2pn34vo)e0yv3s3b&j-z"
+SECRET_KEY = "django-insecure-k-q^n$x68&!ni0zhqjjg5x@3@j&gn34vo)e0yv3s3b&j-z"
 
 TEMPLATES = [
     {
