@@ -20,12 +20,21 @@ DEBUG = os.environ.get("DEBUG", "") == "1"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
 INSTALLED_APPS = [
-    "debug_toolbar",
+    # First party
     "boostdx.core",
-    "django.contrib.staticfiles",
     "polls.apps.PollsConfig",
+    # Third party
+    "debug_toolbar",
     "django_browser_reload",
+    # Contrib
+    "django.contrib.contenttypes",
+    "django.contrib.staticfiles",
+    "django.contrib.sites",
 ]
 
 MIDDLEWARE = [
@@ -33,13 +42,11 @@ MIDDLEWARE = [
     "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-
 ROOT_URLCONF = "boostdx.urls"
 
 SECRET_KEY = "django-insecure-k-q^n$x68&!ni0zhqjjg5x@3@j&gn34vo)e0yv3s3b&j-z"
+
+STATIC_URL = "static/"
 
 TEMPLATES = [
     {
@@ -48,5 +55,4 @@ TEMPLATES = [
         "APP_DIRS": True,
     },
 ]
-STATIC_URL = "static/"
 USE_TZ = True
