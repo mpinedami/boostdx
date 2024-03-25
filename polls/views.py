@@ -29,7 +29,6 @@ def detail(request, question_id):
 
 
 def results(request, question_id):
-
     """Results the given question_id
     message = "Probrando funcion format_html junto con blackend-docs"
     question_id = (Question.objects.filter(
